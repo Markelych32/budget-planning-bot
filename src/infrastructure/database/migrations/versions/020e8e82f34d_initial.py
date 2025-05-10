@@ -176,7 +176,7 @@ def upgrade() -> None:
         currencies_table,
         [
             {"name": "USD", "sign": "$", "equity": 0},
-            {"name": "UAH", "sign": "₴", "equity": 0},
+            {"name": "RUB", "sign": "₽", "equity": 0},
         ],
     )
 

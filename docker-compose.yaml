@@ -16,9 +16,15 @@ services:
         max-file: "3"
     ports:
       - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
     networks:
       - fullstack
 
 networks:
   fullstack:
     driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
