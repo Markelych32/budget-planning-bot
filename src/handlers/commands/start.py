@@ -22,7 +22,7 @@ async def start(contract: CommandContract):
         text = "\n".join(
             (
                 "Привет 😎\nТеперь вы с нами!\n",
-                '<a href="https://github.com/Markelych32/budget-planning-bot">Репозиторий проекта</a>',
+                '<a href="https://github.com/Markelych32/budget-planning-bot">🔥 Репозиторий проекта</a>',
             )
         )
     except DatabaseError:
