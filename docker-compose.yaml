@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
 
-  postgres:
+  postgres_db:
     image: 'postgres:14'
     container_name: "family_budget_db"
     restart: always
@@ -18,6 +18,21 @@ services:
       - '5432:5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - fullstack
+
+  backend:
+    build: .
+    container_name: bot_backend
+    restart: always
+    environment:
+      - DATABASE_NAME=postgres
+      - DB_USER=postgres
+      - DB_PASSWORD=postgres
+      - DB_HOST=postgres_db
+      - DB_PORT=5432
+    depends_on:
+      - postgres_db
     networks:
       - fullstack
 

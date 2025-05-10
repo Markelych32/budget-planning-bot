@@ -9,7 +9,7 @@ SRC_FOLDER = Path(__file__).parent
 ROOT_FOLDER = SRC_FOLDER.parent
 
 DATABASE_NAME = getenv("DATABASE_NAME", default="postgres")
-DATABASE_URL = f"postgresql+asyncpg://postgres:postgres@localhost:5432/{DATABASE_NAME}"
+DATABASE_URL = f"postgresql+asyncpg://{getenv('DB_USER', 'postgres')}:{getenv('DB_PASSWORD', 'postgres')}@{getenv('DB_HOST', 'postgres')}:{getenv('DB_PORT', '5432')}/{getenv('DATABASE_NAME', 'family_budget')}"
 
 CACHE_TTL: timedelta = timedelta(
     seconds=int(getenv("CACHE_TTL", default="86400"))
