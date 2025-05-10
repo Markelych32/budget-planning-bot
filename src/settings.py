@@ -15,6 +15,8 @@ CACHE_TTL: timedelta = timedelta(
     seconds=int(getenv("CACHE_TTL", default="86400"))
 )
 
+ALL_USERS_ALLOWED: bool = getenv("ALL_USERS_ALLOWED", default="False")
+
 USERS_WHITE_LIST: list[int] = [
     int(el) for el in getenv("USERS_WHITE_LIST", default="").split(",") if el
 ]
