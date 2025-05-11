@@ -99,6 +99,10 @@ class BaseCRUD(Session, Generic[ConcreteSchema]):
         return _result
 
     async def _save(self, schema: ConcreteSchema) -> ConcreteSchema:
+        """
+
+        :rtype: ConcreteSchema
+        """
         try:
             self._session.add(schema)
             await self._session.flush()
